@@ -53,12 +53,12 @@ body {
 
 
       a {
-        color: #000000;
+        color: #ff7f50;
         text-decoration: none; /* No underlining */
       }
 
       a:visited { /* visited link */
-        color: #000000;
+        color: #ff7f50;
       }
 
       a:hover,
@@ -69,7 +69,7 @@ body {
 
 
       a:active { /* selected link */
-        color: #000000;
+        color: #994c30;
       }
 
       .button:hover {
