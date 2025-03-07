@@ -1,4 +1,10 @@
-
+/*Color #hexcodes for this website:
+- #F2F2F2
+- ##161A22
+- #FFFFFF
+- #740c58
+- #0F5987 hover
+*/
 
 
 @font-face { font-family: 'Inter'; src: url('../fonts/Inter-VariableFont.ttf') format('truetype'); 
@@ -7,164 +13,443 @@
   font-style: normal; }
 
 
-
-  header {
-    background-color: #ffffff;
-    padding: 10px 0;
-    margin: 10px;
-    border-bottom: 1px solid #f2f2f2;
-    box-sizing: border-box;
-    text-align: center;
-    position: relative;
-
+  @font-face {
+    font-family: 'my-first-website-icon';
+    src: url('../fonts/my-first-website-icon.woff');
+    src:
+         url('../fonts/my-first-website-icon.woff') format('woff');
+  
+    font-weight: normal;
+    font-style: normal;
   }
-
-  selector {
-    margin: 0 auto; /* No spacing to top and bottom and auto spacing to left and right */
-  }
-
-  #hero h1 {
-    margin: 0;
-    padding: 0.67em 0;
-  }
-
-  #hero {
-    background-color: #f2f2f2;
-    padding: 20px 0;
+  
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "my-first-website-icon";
+    font-style: normal;
+    font-weight: normal;
+  
     display: inline-block;
-    width: 100%;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+  
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+  
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+  
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+  
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+  
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
   }
+  
+  .icon-phone:before { content: '\e800'; } /* '' */
+  .icon-mail-alt:before { content: '\f0e0'; } /* '' */
+  .icon-linkedin:before { content: '\f0e1'; } /* '' */
+  .icon-behance:before { content: '\f1b4'; } /* '' */
+
+  * {
+    box-sizing: border-box;
 
 
-  main {
-    padding-top: 133px;
   }
+/* header */ 
+
+header {
+  background-color: #ffffff;
+  padding: 1px 0;
+  border-bottom: 1px solid #f2f2f2;
+
+  box-shadow: 0 2px 5px  #f2f2f2; 
+  position: fixed;
+  width: 100%; /*changed this*/
+  left: 0;
+  top: 0;
+  right: 0;
+
+  display: flex; /*changed this*/
+  justify-content: space-between; /*changed this*/
+}
+
+
+.logo {
+  max-width: 150px;
+}
+
+
+header h1 {
+  font-size: 1.8em;
+}
+
+
+nav > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', serif;
+  display: inline-block;
+  color: #161A22;
+}
+
+
+nav > ul > li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #161a22;
+  padding: 0 15px;
+}
+
+nav > ul > li > a:hover {
+  padding: 0 15px;
+  font-weight: 600;
+  color: #0F5987;
+  text-decoration: none;
+}
+
+/* Hero Section */ 
+
+hero h1 {
+  margin: 0;
+  padding: 0.67em 0;
+}
+
+#hero {
+  background-color: #f2f2f2;
+  padding: 20px 0;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+#hero span {
+  display: block;
+}
+
+
+  /* Main */ 
+
+
+/* Layout styling */
+
+.row {
+
+    margin: 25px 0;
+}
+
+
+#work .row { 
+  padding-bottom: 25px;
+  border-bottom: 1px solid #161a22;
+}
+
+
+main {
+  padding-top: 56px;
+}
+
+
+/* .container {
+  padding: 0 15px;
+  max-width: 1200px; 
+
+  margin: 0px auto;
+} */
 
 body {
+  font-family: "Inter", serif;
+  font-style: normal;
+  margin: 0;
+  color: #161A22;
+}
 
+
+  h1, h2, h3, h4 {
+    line-height: 1.4;
+  }
+  h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 2em;
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-size: 1.6em;
+    font-weight: 500;
+  }
+  h4 {
+    font-size: 1.25em;
+    font-weight: 500;
+  }
+
+  p {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 16px;
+    color: #161A22;
+  }
+
+  
+  img {
+    width: 100%;
+  }
+  
+
+  a {
+    color:  #740c58;
+    text-decoration: none; /* No underlining */
+    font-weight: 500;
+  }
+
+  a:visited { /* visited link */
+    color:  #740c58;
+  }
+
+  a:hover,
+    a:focus {
+    color: #0F5987;
+    text-decoration: underline;
+  }
+
+
+  a:active { /* selected link */
+    color: #0f7505;
+  }
+
+  .button:hover {
+    opacity:0.8; /* Reduces the opacity of the button to 80% */
+    text-decoration: none;
+  }
+
+  .button.contact {
+    background-color: transparent;
+    color:  #740c58;
+
+    text-transform: uppercase;
+    border: 2px; 
+  }
+
+  .button.contact:hover {
+    background-color: #740c58;
+    color: #ffffff;
+  }
+
+
+  .button {
+    display: inline-block; /* since the <a> tag is inline by default, we need to change this to inline-block, but more on this in the next exercise */
     background-color: #f2f2f2;
-    font-family: 'Inter';
-    font-size: auto;/* Sets the font size to 16px;
-    font-weight: 400 /* Sets the font weight to 400 */
-    line-height: 1.6; /* Sets the line-height to 1.6 * the font-size */
-    font-style:normal;
-    color: #161a22ff
+    color: #740c58; /* needed to override the default link color */
+    font-weight: 400;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid #740c58; /* width of the border, type, color */
+    border-top: 2px solid #740c58;
+    border-right: 2px solid #740c58;
+    border-left: 2px solid #740c58;
+    transition-duration: 0.2s;
+    transition: 0.2s opacity;
+  }
+
+#animation-project {
+width: 100%;
+max-width: 50%;
+height: auto;
+
+}
+
+#about-picture {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes color-change {
+  from {fill: #ebee1f;}
+  to {fill: #f76414;}
+}
+
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+
+@keyframes cloud-move {
+  from { transform: translate(0, 50px); }
+  to { transform: translate(200px, 50px); }
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from { transform: translate(0, 50px); }
+  to { transform: translate(200px, 50px); }
+}
+
+
+   /* footer */
+   
+
+.social-icons > ul {
+    list-style-type: none;
+    padding: 0;
+}
+.social-icons > ul > li {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.social-icons > ul > li > a {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    margin: 0 5px;
+}
+.social-icons > ul > li > a > i {
+    color:#161A22;
+    width: 30px;
+    font-size: 26px;
+}
+
+ /* queries  */
+
+ /* ==============================
+Medium devices (640px and larger)
+================================= */
+
+    @media only screen and (min-width: 640px){
+
+      header {
+        text-align: unset;
+        padding: 20px 0 13px;
+         /*justify-content: space-between;*/
+      }
+
+      
+
+      nav {
+        width: auto;
+        float: right;
+        margin-top: 4px;
+
+        display: flex;
+        gap: 15px;
+
+      }
+
+    }
+    nav > ul {
+        margin: 1em 0;
     }
 
-    h1, h2, h3, h4 {
-        line-height: 1.4;
-      }
-      h1 {
-        font-size: 2.75em;
-        font-weight: 700;
-      }
-      
-      h2 {
-        font-size: 2.25em;
-        font-weight: 700;
-      }
-      
-      h3 {
-        font-size: 1.75em;
-        font-weight: 400;
-      }
-      h4 {
-        font-size: 1.35em;
-        font-weight: 400;
-      }
-
-      
-      img {
-        width: 100%;
-      }
-      
-
-      a {
-        color:  #740c58;
-        text-decoration: none; /* No underlining */
-      }
-
-      a:visited { /* visited link */
-        color:  #740c58;
-      }
-
-      a:hover,
-        a:focus {
-        color: #740c58;
-        text-decoration: underline;
-      }
-
-
-      a:active { /* selected link */
-        color: #0f7505;
-      }
-
-      .button:hover {
-        opacity:0.8; /* Reduces the opacity of the button to 80% */
-        text-decoration: none;
-      }
-
-      .button.contact {
-        background-color: transparent;
-        color:  #740c58;
-
-        text-transform: uppercase;
-        border: 2px; 
-      }
-
-      .button.contact:hover {
-        background-color: #740c58;
-        color: #ffffff;
-      }
-
-
-      .button {
-        display: inline-block; /* since the <a> tag is inline by default, we need to change this to inline-block, but more on this in the next exercise */
-        background-color: #f2f2f2;
-        color: #ffffff; /* needed to override the default link color */
-        font-weight: 400;
-        padding: 10px;
-        border-radius: 3px;
-        border-bottom: 2px solid #740c58; /* width of the border, type, color */
-        border-top: 2px solid #740c58;
-        border-right: 2px solid #740c58;
-        border-left: 2px solid #740c58;
-        transition: 0.2s opacity;
-      }
-
-
-      /* Layout styling */
-
-      .container {
-        padding: 0 15px;
-        max-width: 100%;
-        width: 1200px;
-        margin: 0px auto;
-      }
+     nav > ul > li {
+      display: inline-block;
+     }
 
       .row {
-        margin: 25px 0; /* 25px top and bottom. 0 left and right */
-        
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
       }
 
-
-      #work .row { 
-        padding-bottom: 25px; border-bottom: 1px solid #161a22; 
+      .col-md-6 {
+        flex: 0 0 50%;
+       float: left;
       }
 
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
 
-  nav > ul > li > a:visited {
-    padding: 0 15px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 700;
-    color: #161A22;
-    list-style-type: none;
-    display: inline-block;
-    padding: 0;
-    }
+      #animation-about h3 { margin-top: 0;}
 
 
 
+/* ==============================
+Large devices (1200px or larger)
+================================= */
+@media only screen and (min-width: 1200px) {
 
+  header {
+    text-align: unset;
+    padding: 20px 0 13px;
+}
+nav {
+    width: auto;
+    float: right;
+    margin-top: 4px;
+}
+
+
+
+[class*="col-"] {
+  float: left;
+  padding: 10px
+}
+
+
+  .container {
+    max-width: 1200px;
+     margin: 0 auto;
+  }
+
+ /* Change project columns to 60/40 */
+  .col-lg-7 {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .col-lg-5 {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  /* Reverse about page layout */
+  
+  #about-page .row {
+    flex-direction: row-reverse; /* Image on the right */
+  }
+
+  
+
+}
+
+
+/* ==============================
+X-large devices (1440px or larger)
+================================= */
+@media only screen and (min-width: 1440px) {
+}
 
