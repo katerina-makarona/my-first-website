@@ -62,27 +62,97 @@
   .icon-linkedin:before { content: '\f0e1'; } /* '' */
   .icon-behance:before { content: '\f1b4'; } /* '' */
 
+
+  /* General  */
+
   * {
     box-sizing: border-box;
-
-
   }
+
+  body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;                 /*changed this*/
+    font-style: normal;
+    margin: 0;
+    color: #161A22;
+  }
+  
+  
+  h1, h2, h3, h4 {
+    line-height: 1.4;
+  }
+  h1 {
+    font-size: 2.75em;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 2.25em;
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-size: 1.75em;
+    font-weight: 400;
+  }
+  h4 {
+    font-size: 1.35em;
+    font-weight: 400;
+  }
+  
+  
+    p {
+      font-family: "Inter", serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #161A22;
+    }
+  
+    
+    img {
+      width: 100%;
+    }
+    
+  
+    a {
+      color:  #740c58;
+      text-decoration: none; /* No underlining */
+      font-weight: 500;
+    }
+  
+    a:visited { /* visited link */
+      color:  #740c58;
+    }
+  
+    a:hover,
+      a:focus {
+      color: #0F5987;
+      text-decoration: underline;
+    }
+  
+  
+    a:active { /* selected link */
+      color: #0f7505;
+    }
+
+    
+
 /* header */ 
 
 header {
   background-color: #ffffff;
-  padding: 1px 0;
+  padding: 10px 20px;
   border-bottom: 1px solid #f2f2f2;
 
   box-shadow: 0 2px 5px  #f2f2f2; 
   position: fixed;
-  width: 100%; /*changed this*/
+  width: 100%;                        /*changed this*/
   left: 0;
   top: 0;
   right: 0;
 
-  display: flex; /*changed this*/
-  justify-content: space-between; /*changed this*/
+  display: flex;                      /*changed this*/
+  justify-content: space-between;     /*changed this*/
 }
 
 
@@ -92,6 +162,7 @@ header {
 
 
 header h1 {
+  margin-left: 20px;
   font-size: 1.8em;
 }
 
@@ -101,7 +172,7 @@ nav > ul {
   padding: 0;
   margin: 0;
   font-family: 'Inter', serif;
-  display: inline-block;
+  display: inline-block;            /* or flex? */
   color: #161A22;
 }
 
@@ -127,28 +198,77 @@ nav > ul > li > a:hover {
 
 /* Hero Section */ 
 
-hero h1 {
-  margin: 0;
-  padding: 0.67em 0;
-}
-
 #hero {
   background-color: #f2f2f2;
   padding: 20px 0;
   display: inline-block;
   width: 100%;
-  text-align: center;
+  text-align: center;     /*is this correct?*/
 }
+
+#hero h1 {
+  margin: 0;
+  padding: 0.67em 0;
+}
+
 
 #hero span {
   display: block;
 }
 
+#project-title,
+#about-title {
+  margin-top: 100px;
+}
 
-  /* Main */ 
+/*Buttons*/                 /*should buttons go to general styling?*/
+
+
+
+.button:hover {
+  opacity:0.8; /* Reduces the opacity of the button to 80% */
+  text-decoration: none;
+}
+
+.button.contact {
+  background-color: transparent;
+  color:  #740c58;
+
+  text-transform: uppercase;
+  border: 2px; 
+}
+
+.button.contact:hover {
+  background-color: #740c58;
+  color: #ffffff;
+}
+
+
+.button {
+  display: inline-block; /* since the <a> tag is inline by default, we need to change this to inline-block, but more on this in the next exercise */
+  background-color: #f2f2f2;
+  color: #740c58; /* needed to override the default link color */
+  font-weight: 400;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid #740c58; /* width of the border, type, color */
+  border-top: 2px solid #740c58;
+  border-right: 2px solid #740c58;
+  border-left: 2px solid #740c58;
+  transition-duration: 0.2s;
+  transition: 0.2s opacity;
+}
 
 
 /* Layout styling */
+
+
+
+.container {
+  
+  padding: 0 15px;
+} 
 
 .row {
 
@@ -161,118 +281,18 @@ hero h1 {
   border-bottom: 1px solid #161a22;
 }
 
+#my-story .row{
+  padding-bottom: 20px;
+}
+
 
 main {
   padding-top: 56px;
 }
 
 
-/* .container {
-  padding: 0 15px;
-  max-width: 1200px; 
+/* animation - second project */
 
-  margin: 0px auto;
-} */
-
-body {
-  font-family: "Inter", serif;
-  font-style: normal;
-  margin: 0;
-  color: #161A22;
-}
-
-
-  h1, h2, h3, h4 {
-    line-height: 1.4;
-  }
-  h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-  }
-  
-  h2 {
-    font-size: 2em;
-    font-weight: 700;
-  }
-  
-  h3 {
-    font-size: 1.6em;
-    font-weight: 500;
-  }
-  h4 {
-    font-size: 1.25em;
-    font-weight: 500;
-  }
-
-  p {
-    font-family: "Inter", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-size: 16px;
-    color: #161A22;
-  }
-
-  
-  img {
-    width: 100%;
-  }
-  
-
-  a {
-    color:  #740c58;
-    text-decoration: none; /* No underlining */
-    font-weight: 500;
-  }
-
-  a:visited { /* visited link */
-    color:  #740c58;
-  }
-
-  a:hover,
-    a:focus {
-    color: #0F5987;
-    text-decoration: underline;
-  }
-
-
-  a:active { /* selected link */
-    color: #0f7505;
-  }
-
-  .button:hover {
-    opacity:0.8; /* Reduces the opacity of the button to 80% */
-    text-decoration: none;
-  }
-
-  .button.contact {
-    background-color: transparent;
-    color:  #740c58;
-
-    text-transform: uppercase;
-    border: 2px; 
-  }
-
-  .button.contact:hover {
-    background-color: #740c58;
-    color: #ffffff;
-  }
-
-
-  .button {
-    display: inline-block; /* since the <a> tag is inline by default, we need to change this to inline-block, but more on this in the next exercise */
-    background-color: #f2f2f2;
-    color: #740c58; /* needed to override the default link color */
-    font-weight: 400;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 3px;
-    border-bottom: 2px solid #740c58; /* width of the border, type, color */
-    border-top: 2px solid #740c58;
-    border-right: 2px solid #740c58;
-    border-left: 2px solid #740c58;
-    transition-duration: 0.2s;
-    transition: 0.2s opacity;
-  }
 
 #animation-project {
 width: 100%;
@@ -281,7 +301,7 @@ height: auto;
 
 }
 
-#about-picture {
+#about img {
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -319,7 +339,6 @@ height: auto;
 
    /* footer */
    
-
 .social-icons > ul {
     list-style-type: none;
     padding: 0;
@@ -332,7 +351,6 @@ height: auto;
 .social-icons > ul > li > a {
     display: inline-block;
     width: 30px;
-    text-align: center;
     margin: 0 5px;
 }
 .social-icons > ul > li > a > i {
@@ -340,6 +358,7 @@ height: auto;
     width: 30px;
     font-size: 26px;
 }
+
 
  /* queries  */
 
@@ -352,19 +371,14 @@ Medium devices (640px and larger)
       header {
         text-align: unset;
         padding: 20px 0 13px;
-         /*justify-content: space-between;*/
+                                    /*justify-content: space-between;*/
       }
-
-      
 
       nav {
         width: auto;
         float: right;
         margin-top: 4px;
-
         display: flex;
-        gap: 15px;
-
       }
 
     }
@@ -379,12 +393,12 @@ Medium devices (640px and larger)
       .row {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
       }
 
       .col-md-6 {
         flex: 0 0 50%;
-       float: left;
+  
+       
       }
 
       .row::after {
@@ -394,6 +408,12 @@ Medium devices (640px and larger)
       }
 
       #animation-about h3 { margin-top: 0;}
+
+
+  #skills-tools h3 { margin-top: 0;}
+
+  #my-story h2 { margin-top: 0;}
+
 
 
 
@@ -408,14 +428,17 @@ Large devices (1200px or larger)
 }
 nav {
     width: auto;
-    float: right;
     margin-top: 4px;
+}
+
+nav > ul > li {
+  display: inline-block;
 }
 
 
 
 [class*="col-"] {
-  float: left;
+
   padding: 10px
 }
 
@@ -423,6 +446,8 @@ nav {
   .container {
     max-width: 1200px;
      margin: 0 auto;
+     padding: 0 20px; /* Add spacing */
+
   }
 
  /* Change project columns to 60/40 */
@@ -442,14 +467,6 @@ nav {
     flex-direction: row-reverse; /* Image on the right */
   }
 
-  
-
 }
 
-
-/* ==============================
-X-large devices (1440px or larger)
-================================= */
-@media only screen and (min-width: 1440px) {
-}
 
