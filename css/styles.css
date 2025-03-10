@@ -271,10 +271,16 @@ nav > ul > li > a:hover {
 } 
 
 .row {
-
+width: 100%;
     margin: 25px 0;
 }
 
+
+.row-flexbox {
+  display:flex;
+  flex-direction: column;
+ 
+}
 
 #work .row { 
   padding-bottom: 25px;
@@ -354,10 +360,27 @@ height: auto;
     margin: 0 5px;
 }
 .social-icons > ul > li > a > i {
-    color:#161A22;
+    color:#740c58;
     width: 30px;
     font-size: 26px;
 }
+
+
+/*project page*/
+
+.icon-title {
+  display: flex;
+  flex-direction: row;
+  align-items:center
+}
+
+.icon-title img{
+  height: 50px;
+  width: auto;
+  margin-right: 1rem;
+  
+}
+
 
 
  /* queries  */
@@ -381,7 +404,10 @@ Medium devices (640px and larger)
         display: flex;
       }
 
-    }
+   
+
+
+
     nav > ul {
         margin: 1em 0;
     }
@@ -391,14 +417,20 @@ Medium devices (640px and larger)
      }
 
       .row {
-        display: flex;
-        flex-wrap: wrap;
+        width: 100%;
       }
 
       .col-md-6 {
-        flex: 0 0 50%;
+  width: 50%;
   
-       
+      
+      }
+
+
+
+      [class*="col-"] {
+        float: left;
+        padding: 10px
       }
 
       .row::after {
@@ -414,8 +446,20 @@ Medium devices (640px and larger)
 
   #my-story h2 { margin-top: 0;}
 
+.row-flexbox {
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+
+.col-flexbox-1 {
+  width: 48%
+}
 
 
+
+
+}
 
 /* ==============================
 Large devices (1200px or larger)
@@ -436,37 +480,29 @@ nav > ul > li {
 }
 
 
-
-[class*="col-"] {
-
-  padding: 10px
-}
+ 
 
 
   .container {
     max-width: 1200px;
      margin: 0 auto;
-     padding: 0 20px; /* Add spacing */
+    
 
   }
 
  /* Change project columns to 60/40 */
   .col-lg-7 {
-    flex: 0 0 60%;
-    max-width: 60%;
+ width: 60%;
   }
 
   .col-lg-5 {
-    flex: 0 0 40%;
-    max-width: 40%;
+
+    width: 40%;
   }
 
-  /* Reverse about page layout */
-  
-  #about-page .row {
-    flex-direction: row-reverse; /* Image on the right */
-  }
+ 
 
 }
+
 
 
