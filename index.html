@@ -8,6 +8,8 @@
         
             <title>Katerina Makarona</title>
 
+            <script src="https://kit.fontawesome.com/667522a1a6.js" crossorigin="anonymous"></script>
+
             <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
 
             <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -24,19 +26,34 @@
 <body>
 
     <header>
+
         <div class="container"> <!--header-container and then <img src="img/"-->
+
+            <div class="navtoggle" id="myNavtoggle">
             
-            <div class="logo"> <h1> KM </h1> </div>
+                <a href="index.html" class="logo">
 
-            <nav>
+                    <h1> KM</h1>
+                    
+                   <!-- <img src="img/logo/Logo.png" alt="logo"> -->
+                </a>    
 
-                <ul>
-                <li><a href="index.html">Work</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                </ul>
+                <nav>
 
-            </nav>
+                 <ul>
+                  <li><a href="index.html">Work</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="#contact" onclick="menuToggle()">Contact</a></li>
+
+                  <li>  <button class="icon" onclick="menuToggle()">
+                    <i class="fas fa-bars"></i>
+                </button></li>
+
+                  </ul>
+
+                  </nav>
+
+            </div>
 
         </div>
 
@@ -767,6 +784,8 @@ Skills Used:  UX Research, Layout Design, UI Design, Prototyping, Mobile App Des
 </div>
 
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 <script src="js/scripts.js"></script>
 

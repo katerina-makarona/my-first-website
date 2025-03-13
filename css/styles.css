@@ -83,27 +83,27 @@
   }
   h1 {
     font-size: 2.75em;
-    font-weight: 700;
+    font-weight: 600;
   }
   
   h2 {
     font-size: 2.25em;
-    font-weight: 700;
+    font-weight: 600;
   }
   
   h3 {
     font-size: 1.75em;
-    font-weight: 400;
+    font-weight: 300;
   }
   h4 {
     font-size: 1.35em;
-    font-weight: 400;
+    font-weight: 300;
   }
   
   
     p {
       font-family: "Inter", serif;
-      font-weight: 500;
+      font-weight: 300;
       font-size: 16px;
       color: #161A22;
     }
@@ -136,6 +136,7 @@
     }
 
     
+    
 
 /* header */ 
 
@@ -145,20 +146,66 @@ header {
   border-bottom: 1px solid #f2f2f2;
 
   box-shadow: 0 2px 5px  #f2f2f2; 
-  position: fixed;
+  
   width: 100%;                        /*changed this*/
   left: 0;
   top: 0;
   right: 0;
 
-  display: flex;                      /*changed this*/
-  justify-content: space-between;     /*changed this*/
+  display: flex;                      
+  justify-content: space-between;
 }
 
 
-.logo {
-  max-width: 150px;
+
+.navtoggle li:not(:last-child) {
+  display: none;
 }
+
+.navtoggle.responsive li  {
+  display: block;
+padding: 10px 0;
+border-top: 1px solid rgba(234, 233, 233, 0.3); /* Softer border */
+transition: 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+
+
+.navtoggle.responsive li:last-child  {
+  padding: 0 0 10px;
+}
+
+  .navtoggle, .navtoggle.responsive {
+    position: relative;
+  }
+
+
+
+  .navtoggle li .icon {
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 20px;
+  }
+
+  .navtoggle.responsive nav {
+    padding: 24px 0 0;
+  }
+
+
+  .navtoggle.responsive li a:hover {
+    color: #0F5987; /* Hover color */
+  }
+
+
+
+
+
+  
+
+/*.logo {
+  max-width: 80px;
+}*/
 
 
 header h1 {
@@ -169,10 +216,9 @@ header h1 {
 
 nav > ul {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  padding: 10px 0 4px;
+  margin: 1em 0;
   font-family: 'Inter', serif;
-  display: inline-block;            /* or flex? */
   color: #161A22;
 }
 
@@ -262,8 +308,6 @@ nav > ul > li > a:hover {
 
 
 /* Layout styling */
-
-
 
 .container {
   
@@ -404,17 +448,25 @@ Medium devices (640px and larger)
         display: flex;
       }
 
-   
+      .navtoggle li:not(:last-child) {
+        display: inline-block;
+      }
 
+      .navtoggle li:last-child {
+        display: none;
+      }
 
+  
 
     nav > ul {
         margin: 1em 0;
     }
 
-     nav > ul > li {
-      display: inline-block;
-     }
+
+     /* nav > ul > li {
+      
+     } */
+
 
       .row {
         width: 100%;
@@ -456,14 +508,20 @@ Medium devices (640px and larger)
   width: 48%
 }
 
+.logo {
 
-
+  min-width: 641px
+}
 
 }
+
+
 
 /* ==============================
 Large devices (1200px or larger)
 ================================= */
+
+
 @media only screen and (min-width: 1200px) {
 
   header {
@@ -479,7 +537,9 @@ nav > ul > li {
   display: inline-block;
 }
 
-
+.navtoggle li:not(:last-child) {
+  display: inline-block;
+}
  
 
 
@@ -500,6 +560,9 @@ nav > ul > li {
     width: 40%;
   }
 
+  .navtoggle li:last-child {
+    display: none;
+  }
  
 
 }
